@@ -1,58 +1,5 @@
 <script>
-    import { router } from "$lib/Router";
-    let username = "";
-    let password = "";
-    let error = "";
-
-    async function handleLogin() {
-        try {
-            const response = await fetch("http://localhost:8000/token", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: new URLSearchParams({
-                    username,
-                    password,
-                    grant_type: "password",
-                }),
-            });
-
-            if (!response.ok) throw new Error("Invalid credentials");
-
-            const data = await response.json();
-            localStorage.setItem("token", data.access_token);
-            window.location.href = "/dashboard";
-        } catch (e) {
-            error = e.message;
-        }
-    }
-
-    async function handleSignup() {
-        try {
-            const response = await fetch("http://localhost:8000/signup", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: new URLSearchParams({
-                    username,
-                    password,
-                    grant_type: "password",
-                }),
-            });
-
-            if (!response.ok) throw new Error("Username already taken");
-
-            const data = await response.json();
-            localStorage.setItem("token", data.access_token);
-            window.location.href = "/dashboard";
-        } catch (e) {
-            error = e.message;
-        }
-    }
-
-    async function handleForgotPassword() {}
+    import { router } from "../lib/Router";
 </script>
 
 <img src="3.jpg" id="ux" usemap="#ux3" alt="ux3" />
@@ -60,23 +7,20 @@
     <area
         shape="rect"
         coords="160,160,285,200"
-        href="https://example1.com"
         alt="Login"
-        on:click={() => handleLogin()}
+        on:click={() => router.navigate("/login")}
     />
     <area
         shape="rect"
         coords="160,213,285,255"
-        href="https://example2.com"
         alt="Signup"
-        on:click={() => handleSignup()}
+        on:click={() => router.navigate("/signup")}
     />
     <area
         shape="rect"
         coords="160,263,285,280"
-        href="https://example2.com"
         alt="ForgotPassword"
-        on:click={() => handleForgotPassword()}
+        on:click={() => router.navigate("/forgetpassword")}
     />
 </map>
 

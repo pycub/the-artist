@@ -1,4 +1,5 @@
 <script>
+    import NavigationButtons from "../lib/components/NavigationButtons.svelte";
     let username = "";
     let password = "";
     let error = "";
@@ -28,6 +29,8 @@
     }
 </script>
 
+<NavigationButtons />
+<img src="4.jpg" id="ux4" alt="ux4" />
 <form on:submit|preventDefault={handleLogin}>
     <div class="input-group">
         <label for="username">Username</label>
@@ -43,7 +46,7 @@
         <p class="error">{error}</p>
     {/if}
 
-    <button type="submit">Login</button>
+    <button type="submit" class="">Login</button>
 </form>
 
 <style>
@@ -56,27 +59,6 @@
         display: block;
         margin-bottom: 0.5rem;
         color: #4a5568;
-    }
-
-    input {
-        width: 100%;
-        padding: 0.5rem;
-        border: 1px solid #e2e8f0;
-        border-radius: 4px;
-    }
-
-    button {
-        width: 100%;
-        padding: 0.75rem;
-        background: #4299e1;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background: #3182ce;
     }
 
     .error {

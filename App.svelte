@@ -2,7 +2,6 @@
   import { onMount } from 'svelte';
   import Login from './Login.svelte';
   import Signup from './Signup.svelte';
-
   let showLogin = true;
 </script>
 
