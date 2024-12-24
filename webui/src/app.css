@@ -80,7 +80,7 @@ button:focus-visible {
 }
 
 img#ux {
-    width: 470px;
+    width: 100%;
     max-width: 470px;
     min-width: 370px;
 }

@@ -2,27 +2,38 @@
     import { router } from "../lib/Router";
 </script>
 
-<img src="3.jpg" id="ux" usemap="#ux3" alt="ux3" />
-<map name="ux3">
-    <area
-        shape="rect"
-        coords="160,160,285,200"
-        alt="Login"
-        on:click={() => router.navigate("/login")}
-    />
-    <area
-        shape="rect"
-        coords="160,213,285,255"
-        alt="Signup"
-        on:click={() => router.navigate("/signup")}
-    />
-    <area
-        shape="rect"
-        coords="160,263,285,280"
-        alt="ForgotPassword"
-        on:click={() => router.navigate("/forgetpassword")}
-    />
-</map>
+<img src="4.jpg" style="width: 160px;" />
+<!-- <img src="3.jpg" id="ux" usemap="#ux3" alt="ux3" /> -->
+<!-- <map name="ux3"> -->
+<!-- <area -->
+<!-- shape="rect" -->
+<!-- coords="130,132,230,163" -->
+<!-- style="cursor: pointer;" -->
+<!-- alt="Login" -->
+<!-- on:click={() => router.navigate("/login")} -->
+<!-- /> -->
+<!-- <area -->
+<!-- shape="rect" -->
+<!-- coords="131,176,225,206" -->
+<!-- alt="Signup" -->
+<!-- style="cursor: pointer;" -->
+<!-- on:click={() => router.navigate("/signup")} -->
+<!-- /> -->
+<!-- <area -->
+<!-- shape="rect" -->
+<!-- coords="129,214,226,226" -->
+<!-- alt="ForgotPassword" -->
+<!-- style="cursor: pointer;" -->
+<!-- on:click={() => router.navigate("/forgetpassword")} -->
+<!-- /> -->
+<!-- </map> -->
+
+<p>
+    click <b
+        on:click={() => router.navigate("/journey")}
+        style="cursor: pointer;">here</b
+    > to read the story
+</p>
 
 <style>
     .input-group {
